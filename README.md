@@ -13,7 +13,7 @@
 <h3>Adding image's also<h3/>
 <br/>
 <h4>Home<h4/>
-<img src="./Home.jpeg" alt="Home">
+<img src="./Home1.jpeg" alt="Home">
 <br/>
 <h4>Admin Login<h4/>
 <img src="./Admin.jpeg" alt="Home">
