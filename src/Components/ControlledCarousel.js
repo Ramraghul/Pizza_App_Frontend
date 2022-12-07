@@ -13,31 +13,31 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.pizzaah.com/images/slider-1.jpg"
+          src="./images/Banner1.jpg"
           alt="First slide"
         />
-        
+
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.pizzaah.com/images/slider-2.jpg"
+          src="./images/Banner2.jpg"
           alt="Second slide"
         />
 
-      
+
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.pizzaah.com/images/slider-3.jpg"
+          src="./images/Banner3.jpg"
           alt="Third slide"
         />
 
-     
+        {/* https://www.pizzaah.com/images/slider-3.jpg */}
       </Carousel.Item>
     </Carousel>
   );
 }
 
-export default ControlledCarousel ;
+export default ControlledCarousel;
