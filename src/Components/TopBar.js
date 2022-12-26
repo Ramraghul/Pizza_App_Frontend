@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar,Container,Nav,Image,NavDropdown,Button,} from "react-bootstrap";
+import { Navbar, Container, Nav, Image, NavDropdown, Button, } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import img from "../logo.png";
@@ -12,7 +12,7 @@ function TopBar() {
   const { currentUser } = userState;
   return (
     <>
-      <Navbar variant="dark" expand="lg" sticky="top" style={{ backgroundColor: "rgb(172, 0, 29)"}}>
+      <Navbar variant="dark" expand="lg" sticky="top" style={{ backgroundColor: "rgb(172, 0, 29)" }}>
         <Container>
           <Navbar.Brand>
             <Image src={img} alt="logo" style={{ height: "50px" }} />
@@ -51,11 +51,15 @@ function TopBar() {
                         Cart&nbsp;{cartState.cartItems.length}
                       </Nav.Link>
                     </LinkContainer>
+
                   ) : (
                     <LinkContainer to="/admin">
                       <Nav.Link>Admin panel</Nav.Link>
                     </LinkContainer>
                   )}
+                  <LinkContainer to="/orders">
+                    <Nav.Link>Orders</Nav.Link>
+                  </LinkContainer>
                 </>
               ) : (
                 <>
@@ -65,7 +69,7 @@ function TopBar() {
                   <LinkContainer to="/register">
                     <Nav.Link>Register</Nav.Link>
                   </LinkContainer>
-                <LinkContainer to="/adminlogin">
+                  <LinkContainer to="/adminlogin">
                     <Nav.Link>Admin</Nav.Link>
                   </LinkContainer>
                 </>

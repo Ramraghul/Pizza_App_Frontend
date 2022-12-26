@@ -3,6 +3,7 @@ import {getuserOrderRoute,orderRoute,allUserOrder,deliveredOrder} from "../utils
 
 export const placeOrder = (token,subTotal) => async (dispatch, getState) => {
   dispatch({ type: "PLACE_ORDER_REQUEST" });
+
   const currentUser = getState().loginUserReducer.currentUser;
   const cartItems = getState().cartReducer.cartItems;
   try {

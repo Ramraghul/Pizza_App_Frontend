@@ -19,7 +19,7 @@ function Checkout({subTotal}) {
     <>
     {loading && (<Loader/>)}
     {error && (<Error error = "Something went wrong"/>)}
-    {success && (<Success success = "order placed successfully"/>)}
+    {success && (<Success success = "Order Placed successfully"/>)}
     <StripeCheckout
     amount={subTotal * 100}
     shippingAddress

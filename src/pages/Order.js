@@ -21,7 +21,7 @@ function Order() {
       {error && (<Error error="Something went wrong" />)}
       {
         orders && orders.map((order) => (
-          <Container className="container border p-4 bg-light">
+          <Container className="container border p-4 bg-transparent">
             <Row>
               <Col md={4}>
                 {order.orderItems.map((item) => (
@@ -43,6 +43,9 @@ function Order() {
                 <h6>Transaction Id : {order.transactionId}</h6>
                 <h6>Date:{order.createdAt.toString().substring(0, 10)}</h6>
                 <h6>Order Id : {order._id}</h6>
+                {
+                  order.isDelivered === true ? <h6 className='text-light'>Delivered</h6> : <h6 className='text-warning'>Estimate Time : 30 Mint</h6>
+                }
               </Col>
             </Row>
           </Container>
