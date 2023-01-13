@@ -8,9 +8,6 @@ import { FiDelete } from "react-icons/fi";
 
 
 function Userlist() {
-
-  let disabled = true
-  
   const userState = useSelector((state) => state.getAllUsersReducer);
   const {loading,error,users} = userState
   const dispatch = useDispatch();
@@ -42,14 +39,19 @@ function Userlist() {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                <FiDelete 
-                      style = {{ color: "red", cursor: "pointer" || user._id === "63c0f256d0b31a70669f2183" || user._id === "63c0f2d2d0b31a70669f218c" ? disabled : null }}
+                  {
+                      user._id === "63c0f256d0b31a70669f2183" || user._id === "63c0f256d0b31a70669f2183" ?
+                      <FiDelete 
+                      style = {{ color: "red", cursor: "pointer"}}
                       onClick = {()=> {
                         dispatch(deleteUser(user._id))
                       }}/>
-                      {/* {
-                        user._id === "63c0f256d0b31a70669f2183" || user._id === "63c0f2d2d0b31a70669f218c" ? disabled="true" : null
-                      } */}
+                      :<FiDelete 
+                      style = {{ color: "green", cursor: "pointer"}}
+                      onClick = {()=> {
+                        dispatch(deleteUser(user._id))
+                      }}/>
+                    }
                 </td>
               </tr>
             ))
