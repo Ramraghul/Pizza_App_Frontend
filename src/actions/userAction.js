@@ -48,7 +48,7 @@ export const deleteUser = (userid) => async (dispatch) => {
     await axios.post(deleteTheUser, { userid });
     swal("User Deleted Successfully!", "success");
     // window.location.href="/admin";
-    // window.location.reload();
+    window.location.reload();
   } catch (error) {
     swal("Unauthorized","Warning");
   }
