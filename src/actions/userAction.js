@@ -1,13 +1,13 @@
 import axios from "axios";
-import { registerRoute, loginRoute, getUsersAll, deleteTheUser,adminRoute } from "../utils/APIRoutes";
+import { registerRoute, loginRoute, getUsersAll, deleteTheUser, adminRoute } from "../utils/APIRoutes";
 import swal from "sweetalert";
 
 export const registerUser = (user) => async (dispatch) => {
   dispatch({ type: "USER_REGISTER_REQUEST" });
   try {
-  await axios.post(registerRoute, user);
+    await axios.post(registerRoute, user);
     dispatch({ type: "USER_REGISTER_SUCCESS" });
-    window.location.href ="/login";
+    window.location.href = "/login";
   } catch (error) {
     dispatch({ type: "USER_REGISTER_FAIL", payload: error });
   }
@@ -21,16 +21,16 @@ export const loginUser = (user) => async (dispatch) => {
     dispatch({ type: "USER_LOGIN_SUCCESS", payload: response.data });
     localStorage.setItem("currentUser", JSON.stringify(response.data));
     window.location.href = "/";
-    
+
   } catch (error) {
     dispatch({ type: "USER_LOGIN_FAIL", payload: error });
   }
 };
 
 export const logoutUser = () => dispatch => {
-    localStorage.removeItem("currentUser");
-    window.location.href = "/";
-    
+  localStorage.removeItem("currentUser");
+  window.location.href = "/";
+
 };
 
 export const getAllUsers = () => async (dispatch) => {
@@ -45,12 +45,12 @@ export const getAllUsers = () => async (dispatch) => {
 
 export const deleteUser = (userid) => async (dispatch) => {
   try {
- await axios.post(deleteTheUser, { userid });
+    await axios.post(deleteTheUser, { userid });
     swal("User Deleted Successfully!", "success");
     // window.location.href="/admin";
     // window.location.reload();
   } catch (error) {
-    swal("Unauthorized","Warning");
+    swal("Unauthorized", "Warning");
   }
 };
 
