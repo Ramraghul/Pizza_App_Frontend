@@ -50,7 +50,7 @@ export const deleteUser = (userid) => async (dispatch) => {
     // window.location.href="/admin";
     // window.location.reload();
   } catch (error) {
-    swal("Unauthorized", "Warning");
+    swal("Unauthorized","Warning");
   }
 };
 
