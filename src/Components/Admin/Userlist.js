@@ -40,7 +40,7 @@ function Userlist() {
                 <td>{user.email}</td>
                 <td>
                   {
-                      user._id === "63c0f256d0b31a70669f2183" || user._id === "63c0f256d0b31a70669f2183" ?
+                      user._id === "63c0f256d0b31a70669f2183" && user._id === "63c0f256d0b31a70669f2183" ?
                       <FiDelete 
                       style = {{ color: "red", cursor: "pointer"}}
                       onClick = {()=> {
